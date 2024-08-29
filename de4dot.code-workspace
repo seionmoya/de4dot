@@ -1,0 +1,67 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"options": {
+			"env": {
+				"DOTNET_CLI_TELEMETRY_OPTOUT": "yes",
+				"DOTNET_NOLOGO": "yes"
+			}
+		},
+		"tasks": [
+			{
+				"label": "dotnet: clean",
+				"type": "shell",
+				"command": "dotnet clean --nologo",
+				"problemMatcher": []
+			},
+			{
+				"label": "dotnet: restore",
+				"type": "shell",
+				"command": "dotnet restore --nologo --configfile Nuget.config",
+				"problemMatcher": [],
+				"dependsOn": ["dotnet: clean"],
+				"dependsOrder": "sequence"
+			},
+			{
+				"label": "dotnet: build debug",
+				"type": "shell",
+				"command": "dotnet build --nologo --no-restore --configuration Debug",
+				"problemMatcher": [],
+				"dependsOn": ["dotnet: restore"],
+				"dependsOrder": "sequence",
+				"group": "build"
+			},
+			{
+				"label": "dotnet: build release",
+				"type": "shell",
+				"command": "dotnet build --nologo --no-restore --configuration Release",
+				"problemMatcher": [],
+				"dependsOn": ["dotnet: restore"],
+				"dependsOrder": "sequence",
+				"group": "build"
+			},
+			{
+				"label": "dotnet: build publish",
+				"type": "shell",
+				"command": "dotnet publish --nologo --no-build",
+				"problemMatcher": [],
+				"dependsOn": ["dotnet: build release"],
+				"dependsOrder": "sequence",
+				"group": "build"
+			}
+		]
+	},
+	"settings": {
+		"window.title": "de4dot"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-dotnettools.csharp"
+		]
+	}
+}

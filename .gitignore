@@ -1,0 +1,12 @@
+# nuget
+.nuget/
+
+# build
+bin/
+obj/
+
+# test
+TestResults/
+
+# visual studio
+.vs
