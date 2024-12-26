@@ -1,7 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\De4DotCommon.props" />
-
   <ItemGroup>
     <PackageReference Include="dnlib" Version="4.4.0" />
   </ItemGroup>
