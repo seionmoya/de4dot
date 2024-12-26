@@ -28,14 +28,6 @@ using dnlib.DotNet.MD;
 using dnlib.PE;
 using de4dot.blocks;
 
-#if NET35
-namespace System.Runtime.ExceptionServices {
-	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-	class HandleProcessCorruptedStateExceptionsAttribute : Attribute {
-	}
-}
-#endif
-
 namespace de4dot.mdecrypt {
 	public class DynamicMethodsDecrypter {
 		static DynamicMethodsDecrypter instance;

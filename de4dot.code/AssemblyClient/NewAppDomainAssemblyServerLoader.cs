@@ -39,9 +39,7 @@ namespace de4dot.code.AssemblyClient {
 			appDomain = AppDomain.CreateDomain(Utils.RandomName(15, 20));
 			thread = new Thread(new ThreadStart(() => {
 				try {
-#if NET35
-					appDomain.ExecuteAssembly(filename, null, new string[] {
-#elif NET45
+#if NET48
 					appDomain.ExecuteAssembly(filename, new string[] {
 #else
 #error Unknown tfm
