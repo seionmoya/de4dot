@@ -8,6 +8,9 @@
     <TargetFrameworks Condition=" '$(De4DotNetFramework)' != 'true' ">netcoreapp3.1;netcoreapp2.1</TargetFrameworks>
     <Features>strict</Features>
     <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Version>3.1.41592.3405</Version>
     <Copyright>Copyright (C) 2011-2018 de4dot@gmail.com</Copyright>
     <OutputPath>$(MSBuildThisFileDirectory)\$(Configuration)</OutputPath>
