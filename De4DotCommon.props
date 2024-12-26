@@ -15,9 +15,8 @@
     <Copyright>Copyright (C) 2011-2018 de4dot@gmail.com</Copyright>
   </PropertyGroup>
 
-  <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
-    <PrivateAssets>all</PrivateAssets>
-    <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-  </PackageReference>
+  <PropertyGroup Condition=" '$(SolutionName)' == 'de4dot.netframework' ">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
+  </PropertyGroup>
 
 </Project>
