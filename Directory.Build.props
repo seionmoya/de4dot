@@ -1,20 +1,13 @@
 <Project>
 
   <PropertyGroup>
-    <De4DotNetFramework>false</De4DotNetFramework>
-    <De4DotNetFramework Condition=" '$(SolutionName)' == 'de4dot.netframework' ">true</De4DotNetFramework>
-    <!-- Two different sln files are used because some of the projects are only available when targetting .NET Framework -->
-    <TargetFramework Condition=" '$(De4DotNetFramework)' == 'true' ">net48</TargetFramework>
-    <TargetFramework Condition=" '$(De4DotNetFramework)' != 'true' ">net8.0</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <Features>strict</Features>
     <LangVersion>latest</LangVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <Version>3.2.0</Version>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(SolutionName)' == 'de4dot.netframework' ">
+  <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
   </ItemGroup>
 
