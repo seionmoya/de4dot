@@ -17,4 +17,9 @@
     <DnlibVersion>3.3.2</DnlibVersion>
   </PropertyGroup>
 
+  <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
+    <PrivateAssets>all</PrivateAssets>
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+  </PackageReference>
+
 </Project>
