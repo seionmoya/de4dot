@@ -24,7 +24,6 @@ using System.IO.Compression;
 using System.Security.Cryptography;
 using dnlib.DotNet;
 using dnlib.DotNet.Emit;
-using ICSharpCode.SharpZipLib.Zip.Compression;
 using de4dot.blocks;
 
 namespace de4dot.code.deobfuscators {
@@ -137,37 +136,6 @@ namespace de4dot.code.deobfuscators {
 			case ModuleKind.Windows:
 			default:
 				return ".exe";
-			}
-		}
-
-		public static byte[] Inflate(byte[] data, bool noHeader) =>
-			Inflate(data, 0, data.Length, noHeader);
-
-		public static byte[] Inflate(byte[] data, int start, int len, bool noHeader) =>
-			Inflate(data, start, len, new Inflater(noHeader));
-
-		public static byte[] Inflate(byte[] data, Inflater inflater) =>
-			Inflate(data, 0, data.Length, inflater);
-
-		public static byte[] Inflate(byte[] data, int start, int len, Inflater inflater) {
-			var buffer = new byte[0x1000];
-			var memStream = new MemoryStream();
-			inflater.SetInput(data, start, len);
-			while (true) {
-				int count = inflater.Inflate(buffer, 0, buffer.Length);
-				if (count == 0)
-					break;
-				memStream.Write(buffer, 0, count);
-			}
-			return memStream.ToArray();
-		}
-
-		public static byte[] Gunzip(Stream input, int decompressedSize) {
-			using (var gzip = new GZipStream(input, CompressionMode.Decompress)) {
-				var decompressed = new byte[decompressedSize];
-				if (gzip.Read(decompressed, 0, decompressedSize) != decompressedSize)
-					throw new ApplicationException("Could not gzip decompress");
-				return decompressed;
 			}
 		}
 

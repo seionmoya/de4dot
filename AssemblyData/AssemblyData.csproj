@@ -1,9 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\De4DotCommon.props" />
-
   <ItemGroup>
-    <Reference Include="System.Runtime.Remoting" Condition=" '$(De4DotNetFramework)' == 'true' " />
+    <Reference Include="System.Runtime.Remoting" />
   </ItemGroup>
 
   <ItemGroup>

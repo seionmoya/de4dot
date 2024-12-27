@@ -32,7 +32,7 @@ namespace de4dot.cui {
 		public ExitException(int code) => this.code = code;
 	}
 
-	class Program {
+	public class Program {
 		static IList<IDeobfuscatorInfo> deobfuscatorInfos = CreateDeobfuscatorInfos();
 
 		static IList<IDeobfuscatorInfo> LoadPlugin(string assembly) {
@@ -65,27 +65,6 @@ namespace de4dot.cui {
 		static IList<IDeobfuscatorInfo> CreateDeobfuscatorInfos() {
 			var local = new List<IDeobfuscatorInfo> {
 				new de4dot.code.deobfuscators.Unknown.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Agile_NET.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Babel_NET.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.CodeFort.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.CodeVeil.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.CodeWall.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Confuser.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.CryptoObfuscator.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.DeepSea.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Dotfuscator.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.dotNET_Reactor.v3.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.dotNET_Reactor.v4.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Eazfuscator_NET.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Goliath_NET.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.ILProtector.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.MaxtoCode.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.MPRESS.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Rummage.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Skater_NET.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.SmartAssembly.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Spices_Net.DeobfuscatorInfo(),
-				new de4dot.code.deobfuscators.Xenocode.DeobfuscatorInfo(),
 			};
 			var dict = new Dictionary<string, IDeobfuscatorInfo>();
 			foreach (var d in local)
